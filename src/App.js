@@ -4,7 +4,9 @@ import styled from 'styled-components'
 import triple2x from './public/images/triple2x.png'
 import playStore2x from './public/images/play-store2x.png'
 import badgeApple4x from './public/images/badge-apple4x.png'
-import TextBox from './components/TextBox'
+import Record from './components/Record'
+import { AWARDSTATEMENT1, AWARDSTATEMENT2 } from './constants/statements'
+import Award from './components/Award'
 
 function App() {
   return (
@@ -18,27 +20,13 @@ function App() {
       <LeftSec>
         <main>
           <section>
-            <TextBox amount="350만 명" category="사용자" />
-            <TextBox amount="21만 개" category="리뷰" />
-            <TextBox amount="650만 개" category="저장" />
+            <Record amount="350" unit="만 명" category="사용자" />
+            <Record amount="21" unit="만 개" category="리뷰" />
+            <Record amount="650" unit="만 개" category="저장" />
           </section>
           <section>
-            <div>
-              <img src={playStore2x} alt="googlePlay" />
-              <span>
-                2018 구글 플레이스토어
-                <br />
-                올해의 앱 최우수상 수상
-              </span>
-            </div>
-            <div>
-              <img src={badgeApple4x} alt="apple" />
-              <span>
-                2018 애플 앱스토어
-                <br />
-                오늘의 여행앱 선정
-              </span>
-            </div>
+            <Award imgSrc={playStore2x} statement={AWARDSTATEMENT1} />
+            <Award imgSrc={badgeApple4x} statement={AWARDSTATEMENT2} />
           </section>
         </main>
       </LeftSec>
@@ -94,20 +82,6 @@ const LeftSec = styled.section`
       animation-delay: 200ms;
       display: flex;
       margin-top: 30px;
-      div {
-        display: flex;
-        align-items: center;
-        margin-right: 39px;
-        img {
-          width: 72px;
-          padding-right: 10px;
-        }
-        span {
-          font-weight: bold;
-          font-size: 14px;
-          line-height: 22px;
-        }
-      }
     }
   }
 `
