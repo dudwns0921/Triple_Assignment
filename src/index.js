@@ -18,6 +18,17 @@ const GlobalStyles = createGlobalStyle`
     --app-font-color: rgba(58, 58, 58, 0.7); 
   }
   ${reset}
+
+  @keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+  }
 `
 
 const root = ReactDOM.createRoot(document.getElementById('root'))

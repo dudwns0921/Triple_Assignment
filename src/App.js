@@ -56,6 +56,8 @@ const Container = styled.div`
   color: var(--app-font-color);
 `
 const RightSec = styled.section`
+  animation-duration: 700ms;
+  animation-name: fadeInUp;
   display: flex;
   justify-content: center;
   main {
@@ -80,7 +82,16 @@ const LeftSec = styled.section`
   flex-direction: column;
   main {
     display: grid;
+    section {
+      animation-name: fadeInUp;
+      animation-duration: 700ms;
+      animation-fill-mode: backwards;
+    }
+    section:nth-child(1) {
+      animation-delay: 100ms;
+    }
     section:nth-child(2) {
+      animation-delay: 200ms;
       display: flex;
       margin-top: 30px;
       div {
