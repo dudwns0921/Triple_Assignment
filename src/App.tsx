@@ -8,32 +8,6 @@ import Record from './components/Record.tsx'
 import { AWARDSTATEMENT1, AWARDSTATEMENT2 } from './constants/statements.ts'
 import Award from './components/Award.tsx'
 
-function App() {
-  return (
-    <Container>
-      <RightSec>
-        <main>
-          <img src={triple2x} alt="triple" />
-          <span>2019년 2월 기준</span>
-        </main>
-      </RightSec>
-      <LeftSec>
-        <main>
-          <section>
-            <Record amount={350} unit="만 명" category="사용자" />
-            <Record amount={21} unit="만 개" category="리뷰" />
-            <Record amount={650} unit="만 개" category="저장" />
-          </section>
-          <section>
-            <Award imgSrc={playStore2x} statement={AWARDSTATEMENT1} />
-            <Award imgSrc={badgeApple4x} statement={AWARDSTATEMENT2} />
-          </section>
-        </main>
-      </LeftSec>
-    </Container>
-  )
-}
-
 const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -85,5 +59,31 @@ const LeftSec = styled.section`
     }
   }
 `
+
+function App() {
+  return (
+    <Container>
+      <RightSec>
+        <main>
+          <img src={triple2x} alt="triple" />
+          <span>2019년 2월 기준</span>
+        </main>
+      </RightSec>
+      <LeftSec>
+        <main>
+          <section>
+            <Record amount={350} unit="만 명" category="사용자" />
+            <Record amount={21} unit="만 개" category="리뷰" />
+            <Record amount={650} unit="만 개" category="저장" />
+          </section>
+          <section>
+            <Award imgSrc={playStore2x} statement={AWARDSTATEMENT1} />
+            <Award imgSrc={badgeApple4x} statement={AWARDSTATEMENT2} />
+          </section>
+        </main>
+      </LeftSec>
+    </Container>
+  )
+}
 
 export default App

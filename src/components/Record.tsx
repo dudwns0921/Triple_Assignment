@@ -1,6 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 
+const Container = styled.div`
+  margin-bottom: 20px;
+  font-size: 36px;
+  color: rgb(58, 58, 58);
+  strong {
+    font-weight: bold;
+  }
+`
+
 interface RecordProps {
   amount: number
   unit: string
@@ -32,14 +41,5 @@ function Record(props: RecordProps) {
     </Container>
   )
 }
-
-const Container = styled.div`
-  margin-bottom: 20px;
-  font-size: 36px;
-  color: rgb(58, 58, 58);
-  strong {
-    font-weight: bold;
-  }
-`
 
 export default Record
