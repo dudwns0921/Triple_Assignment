@@ -1,11 +1,10 @@
 const path = require('path')
 
-const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  mode: 'none',
-  entry: './src/index.js',
+  mode: 'development',
+  entry: './src/index.tsx',
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
@@ -13,12 +12,12 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(ts|tsx)$/,
         use: ['babel-loader'],
         exclude: /node_modules/,
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/,
+        test: /\.(png)$/,
         type: 'asset/resource',
       },
     ],
@@ -26,9 +25,6 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/public/index.html',
-    }),
-    new webpack.ProvidePlugin({
-      process: 'process/browser',
     }),
   ],
 }

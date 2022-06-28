@@ -4,9 +4,9 @@ import styled from 'styled-components'
 import triple2x from './public/images/triple2x.png'
 import playStore2x from './public/images/play-store2x.png'
 import badgeApple4x from './public/images/badge-apple4x.png'
-import Record from './components/Record'
-import { AWARDSTATEMENT1, AWARDSTATEMENT2 } from './constants/statements'
-import Award from './components/Award'
+import Record from './components/Record.tsx'
+import { AWARDSTATEMENT1, AWARDSTATEMENT2 } from './constants/statements.ts'
+import Award from './components/Award.tsx'
 
 function App() {
   return (
@@ -20,9 +20,9 @@ function App() {
       <LeftSec>
         <main>
           <section>
-            <Record amount="350" unit="만 명" category="사용자" />
-            <Record amount="21" unit="만 개" category="리뷰" />
-            <Record amount="650" unit="만 개" category="저장" />
+            <Record amount={350} unit="만 명" category="사용자" />
+            <Record amount={21} unit="만 개" category="리뷰" />
+            <Record amount={650} unit="만 개" category="저장" />
           </section>
           <section>
             <Award imgSrc={playStore2x} statement={AWARDSTATEMENT1} />

@@ -1,7 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 
-function Award(props) {
+interface AwardProps {
+  imgSrc: string
+  statement: string[]
+}
+
+function Award(props: AwardProps) {
   return (
     <Container>
       <img src={props.imgSrc} alt="apple" />

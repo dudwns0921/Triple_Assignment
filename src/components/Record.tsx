@@ -1,18 +1,24 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 
-function Record(props) {
-  const [count, setCount] = useState(0)
+interface RecordProps {
+  amount: number
+  unit: string
+  category: string
+}
+
+function Record(props: RecordProps) {
+  const [count, setCount]: [number, (newCount: number) => void] = useState(0)
   useEffect(() => {
     let delay = 1200 / props.amount
     if (count < props.amount - 4) {
       setTimeout(() => {
-        setCount((prev) => prev + 1)
+        setCount(count + 1)
       }, delay)
     } else if (props.amount - 4 <= count && count < props.amount) {
       delay = 800 / 4
       setTimeout(() => {
-        setCount((prev) => prev + 1)
+        setCount(count + 1)
       }, delay)
     }
   }, [count, props.amount])
